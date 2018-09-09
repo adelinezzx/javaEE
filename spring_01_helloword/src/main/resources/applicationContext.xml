@@ -1,0 +1,34 @@
+ 
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+        <!--  通知spring 容器 要创建一个Student对象  寻到spring容器中
+         spring容器实际上就是一个Map<String ,Object>
+                       "Studdent"   "student对象"
+                                               new   com.adeline.bean.Student()
+        -->
+<bean  id="Student" class ="com.adeline.bean.Student" >
+    <property name="stuId" value="1"></property>
+    <property name = "stuName" value="adeline"></property>
+
+</bean>
+
+<!--要优先于配置  -->
+<!--  spring完成dao对象的创建，并完成biz对象创建，并完成 将dao 对象 传到biz对象的过程-->
+ <bean id="studentDao"  class="com.adeline.dao.impl.StudentDaoImpl"></bean>
+ 
+ <bean id="studentBiz"  class="com.adeline.biz.impl.StudentBizImpl">
+     <!-- spring 要完成装配  将dao传到biz 对象中的过程 -->
+     <property name="StudentDao" ref ="studentDao"></property>
+ </bean>
+ 
+ <bean id="measurable" class="com.adeline.bean.PersonBmiTool"></bean>
+ <bean id="filter" class="com.adeline.bean.PersonFilter"></bean>
+ 
+ <bean id="Container" class="com.adeline.bean.Container">
+       <property name="measurable" ref = "measurable"></property>
+       <property name="filter" ref="filter"></property>
+  </bean>
+</beans>
