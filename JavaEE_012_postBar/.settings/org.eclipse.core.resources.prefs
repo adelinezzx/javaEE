@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+encoding//WebContent/head.jsp=UTF-8
+encoding//WebContent/login.jsp=UTF-8
+encoding//WebContent/reg.jsp=UTF-8
+encoding//src/com/yc/biz/UserBiz.java=UTF-8
+encoding//src/com/yc/model/DBHelper.java=UTF-8
+encoding//src/com/yc/web/tags/PageTag.java=gbk

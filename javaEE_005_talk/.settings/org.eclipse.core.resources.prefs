@@ -1,0 +1,12 @@
+eclipse.preferences.version=1
+encoding//WebContent/WEB-INF/web.xml=UTF-8
+encoding//WebContent/dologin.jsp=UTF-8
+encoding//WebContent/index.jsp=UTF-8
+encoding//WebContent/talk/doMessage.jsp=UTF-8
+encoding//WebContent/talk/showMessage.jsp=UTF-8
+encoding//WebContent/talk/talk.jsp=UTF-8
+encoding//WebContent/talkroom.jsp=UTF-8
+encoding//src/com/yc/mysql/DBHelper.java=UTF-8
+encoding//src/com/yc/mysql/UserBiz.java=UTF-8
+encoding/<project>=UTF-8
+encoding/WebContent=UTF-8

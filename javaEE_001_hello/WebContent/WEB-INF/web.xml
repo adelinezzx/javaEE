@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  
+  
+  <!-- 登录 -->
+  <!--servlet配置，就是把Java处理类和请求地址关联  -->
+  <servlet>
+       <servlet-name>UserServlet</servlet-name>
+       <servlet-class>com.zzx.j2ee.web.servlet.UserServlet</servlet-class>
+  </servlet>
+  
+  <!--uri：同一资源  -->
+  <servlet-mapping>
+      <servlet-name>UserServlet</servlet-name>
+      <url-pattern>/login</url-pattern>  <!--地址：当请求login的时候就会连接 UserServlet-->
+  </servlet-mapping>
+  
+  <!-- servlet生命周期 -->
+   <!--servlet配置，就是把Java处理类和请求地址关联  -->
+  <servlet>
+       <servlet-name>UserServlet02</servlet-name>
+       <servlet-class>com.zzx.j2ee.web.servlet.UserServlet02</servlet-class>
+       <!--设置servlet初始化操参数  -->
+       <init-param>  
+          <param-name>charset</param-name>
+          <param-value>utf-8</param-value>
+       </init-param>
+  </servlet>
+  <!--url：同一资源  -->
+  <servlet-mapping>
+      <servlet-name>UserServlet02</servlet-name>
+      <url-pattern>/slc</url-pattern>  <!--地址：当请求slc的时候就会连接 UserServlet02-->
+  </servlet-mapping>
+  
+  <!-- 注册 -->
+   <servlet>
+       <servlet-name>register</servlet-name>
+       <servlet-class>com.zzx.j2ee.web.servlet.register</servlet-class>
+  </servlet>
+  
+  <!--uri：同一资源  -->
+  <servlet-mapping>
+      <servlet-name>register</servlet-name>
+      <url-pattern>/register</url-pattern>  <!--地址：当请求login的时候就会连接 UserServlet-->
+  </servlet-mapping>
+  
+  
+  
+  <welcome-file-list>
+    <welcome-file>login.html</welcome-file>
+  </welcome-file-list>
+</web-app>
