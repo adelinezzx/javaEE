@@ -1,0 +1,7 @@
+
+<beans  >
+        
+        
+	<component-scan base-package="com.yc" />
+
+</beans>

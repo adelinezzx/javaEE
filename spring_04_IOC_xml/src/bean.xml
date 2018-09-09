@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  >
+
+     <bean id="student"  class="com.yc.bean.Student">
+              <property  name="stuId"  value="1"/>
+		       <property name="stuName"  value="bob"/> 
+     </bean>
+
+</beans>

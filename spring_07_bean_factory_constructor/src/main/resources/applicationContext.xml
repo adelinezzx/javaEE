@@ -1,0 +1,80 @@
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:c="http://www.springframework.org/schema/c" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- -->
+	<bean id="dataSourcePool" class="com.yc.bean.DataSourcePool"
+		factory-method="createInstance" />
+
+	<!-- collaborators -->
+	<bean id="person" class="com.yc.bean.Person">
+		<constructor-arg type="String" value="bobo" />
+		<constructor-arg type="double" value="42.0" />
+		<constructor-arg type="double" value="42.0" />
+
+	</bean>
+	<!-- inner bean的测试 类似于内部类 -->
+	<bean id="c43" class="com.yc.bean.Classes">
+		<property name="person">
+			<bean class="com.yc.bean.Person"> <!-- this is the inner bean -->
+				<constructor-arg type="String" value="bobo" />
+				<constructor-arg type="double" value="42.0" />
+				<constructor-arg type="double" value="42.0" />
+			</bean>
+		</property>
+
+	</bean>
+
+	<!-- p-namespace 的测试 -->
+	<bean name="classic" class="com.yc.bean.Person">
+		<property name="name" value="foo@bar.com" />
+	</bean>
+
+	<bean name="p-namespace" class="com.yc.bean.Person" p:name="foo@bar.com" />
+
+	<!-- c-namespace 的测试 -->
+	 
+	<!-- <bean id="p" class="com.yc.bean.Classes">
+		 
+	</bean>
+	<bean id="personCla" class="com.yc.bean.Person" c:name="b"
+		c:bar-ref="p" /> -->
+
+	<!--Collections集合类型的测试 -->
+	<bean id="testData" class="com.yc.test.TestData">
+
+		<property name="adminEmails">
+			<props>
+				<prop key="administrator">administrator@example.org</prop>
+				<prop key="support">support@example.org</prop>
+				<prop key="development">development@example.org</prop>
+			</props>
+		</property>
+
+		<property name="someList">
+			<list>
+				<value>a list element followed by a reference</value>
+				<!-- <ref bean="myDataSource" /> -->
+			</list>
+		</property>
+
+		<property name="someMap">
+			<map>
+				<entry key="an entry" value="just some string" />
+				<entry key="a ref" value-ref="dataSourcePool" />
+			</map>
+		</property>
+
+		<property name="someSet">
+			<set>
+				<value>just some string</value>
+				<!-- <ref bean="myDataSource" /> -->
+			</set>
+		</property>
+	</bean>
+
+
+</beans>

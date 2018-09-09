@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<beans>
+
+     <bean id="student"  class="com.yc.bean.Student">
+		       <property  name="stuId"  value="1"/>
+		       <property name="stuName"  value="bob"/> 
+     </bean>
+
+	<bean id="person" class="com.yc.bean.Person">
+		<property name="stuId" value="1" />
+		<property name="stuName" value="bob" />
+	</bean>
+	
+	<bean id="studentDao"  class="com.yc.dao.impl.StudentDaoImpl"></bean>
+	
+	<bean id="studentBiz" class="com.yc.biz.impl.StudentBizImpl"> 
+	     <property  name="studentDao" ref="studentDao"/>
+	</bean>
+	
+	 
+</beans>

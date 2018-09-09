@@ -1,0 +1,28 @@
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="person" class="com.yc.bean.Person" lazy-init="true">
+		<property name="name" value="bbb" />
+	</bean>
+	<!-- <bean name="class" class="com.yc.bean.Classes" depends-on="person"> 
+		<property name="person" ref="person" /> </bean> -->
+
+	<!--单实例测试 -->
+	<bean id="person2" class="com.yc.bean.Person"  scope="singleton">
+		<property name="name" value="bbb" />
+	</bean>
+	<!-- duo实例测试 -->
+	<bean id="person3" class="com.yc.bean.Person" scope="prototype">
+		<property name="name" value="bbb" />
+	</bean>
+	
+	<!--  生命周期回调   初始化方法-->
+	
+	<bean  id="p1"  class="com.yc.bean.StudentDao"  init-method="initCon">
+	       
+	</bean>
+</beans>

@@ -1,0 +1,17 @@
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- -->
+
+	<bean id="dsp" class="com.yc.bean.DataSourcePool" depends-on="manager" />
+
+	<!-- 通知spring 容器 要创建一个Student对象 寻到spring容器中 spring容器实际上就是一个Map<String ,Object> 
+		"Studdent" "student对象" new com.adeline.bean.Student() -->
+	<bean id="Student" class="com.adeline.bean.Student">
+		<property name="stuId" value="1"></property>
+		<property name="stuName" value="adeline"></property>
+
+	</bean>
+</beans>
